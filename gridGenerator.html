@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Grid Generator
+</body>
+<script>
+    //for 8 x 8 grid first
+      var str = "" //initializing the string
+
+// generating the cols
+for (let col = 1; col <= 8; col++) {
+
+    // generating the row
+    for (let row = 1; row <= 8; row++) {
+        // generating odd rows such that they start with a space
+        if (row % 2 === 0) {
+            // if the column is even enter an empty string
+            if (col % 2 === 0) {
+                str += " ";
+            } else {
+                // if otherwise add "#"
+                str += "#";
+            }
+        } else {
+            if (col % 2 === 0) {
+                str += "#";
+            } else {
+                str += " ";
+            }
+        }
+    }
+    // at the end of a row jump to a new line 
+    str += "\n";
+}
+
+console.log(str);
+
+// now repeat as a function so it can be reusable
+function gridGenerate(sizeofGrid){  //passing the size as a parameter
+    // empty string to store the values
+    var str = ""
+    for (let col = 1; col <= sizeofGrid; col++) {
+
+// generating the row
+for (let row = 1; row <= 8; row++) {
+    // generating odd rows such that they start with a space
+    if (row % 2 === 0) {
+        // if the column is even enter an empty string
+        if (col % 2 === 0) {
+            str += " ";
+        } else {
+            // if otherwise add "#"
+            str += "#";
+        }
+    } else {
+        if (col % 2 === 0) {
+            str += "#";
+        } else {
+            str += " ";
+        }
+    }
+}
+// at the end of a row jump to a new line 
+str += "\n";
+}
+   
+    return str;
+}
+//passing an argument into the function
+console.log(gridGenerate(13));
+</script>
+</html>
